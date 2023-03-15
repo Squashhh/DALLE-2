@@ -13,13 +13,6 @@ CLIENT_ID = Client ID of your bot.
 WEBHOOK_URL= Webhook for add/remove messages from the bot.
 OPEN_AI= Key to your api open ai.
 ```
-## BUILDING
-
-You create the bot project via this command :
-```
-npm run build
-```
-
 ## RUNNING
 
 You can launch the bot via this command :
