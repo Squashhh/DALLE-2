@@ -1,4 +1,4 @@
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, ChatInputCommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
+import { ChatInputCommandInteraction, EmbedBuilder, SlashCommandBuilder } from "discord.js";
 import { SlashCommands } from "../type";
 import { Configuration, OpenAIApi } from "openai";
 
@@ -14,34 +14,40 @@ export const command: SlashCommands = {
 		.setDescription('What is the image you want to generate ?')
         .setRequired(true)),
 
-        execute : async(command: ChatInputCommandInteraction) => {
+    execute : async(command: ChatInputCommandInteraction) => {
 
-            await command.deferReply();
-            
-            const input = command.options.getString('desc');
+        const input = command.options.getString('desc');
+            console.log('🟥 Request sent : ' + input);
+            await command.deferReply(); 
+        const openai = new OpenAIApi(configuration);
 
-            const row = new ActionRowBuilder<ButtonBuilder>()
-			.addComponents(
-				new ButtonBuilder()
-					.setLabel('Get Variant')
-					.setStyle(ButtonStyle.Success)
-			)
-
-            const openai = new OpenAIApi(configuration);const response = await openai.createImage({
+        try {
+            const response = await openai.createImage({
                 prompt: input,
                 n: 1,
                 size: "1024x1024",
             });
-            const image_url = response.data.data[0].url; 
-            
-            const embed = new EmbedBuilder()
-            .setTitle('Dall·E - Image Generation Tool')
-            .setDescription("🤖 You have requested ``" + input + "``.")
-            .setColor('#23272a')
-            .setURL('https://openai.com/product/dall-e-2')
-            .setImage(image_url)
-            .setTimestamp();
-
-            await command.editReply({ embeds: [embed], components: [row]}) 
+            console.log(response.data.data[0].url);
+            const embed3 = new EmbedBuilder()
+            	    .setTitle('Dall·E - Image Generation Tool')
+           	        .setDescription("🤖 You have requested ``" + input + "``.")
+          	        .setColor('#23272a')
+          	        .setURL('https://openai.com/product/dall-e-2')
+          	        .setImage(response.data.data[0].url)
+           	        .setTimestamp();
+            await command.editReply({ embeds: [embed3]}) 
+        } catch (error) {
+            if (error.response) {
+                const embed3 = new EmbedBuilder()
+                    .setTitle('Dall·E - Image Generation Tool')
+                    .setDescription("⛔ **An error has occurred.**")
+                    .setColor('#ED4245')
+                    .setURL('https://openai.com/product/dall-e-2')
+                    .setTimestamp();
+                await command.editReply({ embeds: [embed3]}) 
+            }
         }
+    }
 }
+    
+
