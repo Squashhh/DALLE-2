@@ -17,14 +17,14 @@ OPEN_AI= Key to your api open ai.
 
 You create the bot project via this command :
 ```
-npm start
+npm run build
 ```
 
 ## RUNNING
 
 You can launch the bot via this command :
 ```
-npm run build
+npm start
 ```
 
 ## SUPPORT 
