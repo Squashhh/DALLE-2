@@ -6,7 +6,7 @@ A discord bot to generate images via Dall-E artificial intelligence /imagine !
 
 ## SETUP
 
-Create a and add the following variables :
+Create a .env file in the root directory of the project and add the following variables :
 ```
 TOKEN= Token of your bot.
 CLIENT_ID = Client ID of your bot.
