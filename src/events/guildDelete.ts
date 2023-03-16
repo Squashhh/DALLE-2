@@ -1,6 +1,7 @@
 import { DalleEvents } from "../type";
 import { Events, Guild, WebhookClient, EmbedBuilder, ActivityType } from 'discord.js';
 import { client } from '../index';
+import { formatNumbers } from '../utils/numbers';
 import axios from 'axios';
 
 const event: DalleEvents = {
@@ -21,9 +22,15 @@ const event: DalleEvents = {
     
     webhookClient.destroy();
 
+    let userCount = 0;
+    
+    client.guilds.cache.forEach((guild) => {
+      userCount += guild.memberCount;
+    });
+
     client.user.setPresence({
-      activities: [{ name: client.guilds.cache.size.toString() + " servers...", type: ActivityType.Watching }],
-  })
+        activities: [{ name: client.guilds.cache.size.toString() + " servers | " + formatNumbers(userCount) + " users", type: ActivityType.Watching }],
+    });
   }
 };
 
