@@ -8,7 +8,7 @@ const configuration = new Configuration({
 
 export const command: SlashCommands = {
     name : 'imagine',
-    data : new SlashCommandBuilder().setName(`imagine`).setDescription(`Generate an image with DallE !`)
+    data : new SlashCommandBuilder().setName(`imagine`).setDescription(`Generate an image with DallE !`).setDMPermission(false)
     .addStringOption(option =>
 	    option.setName('desc')
 		.setDescription('What is the image you want to generate ?')
