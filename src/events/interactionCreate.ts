@@ -1,7 +1,7 @@
-import { EttyEvents } from "../type";
+import { DalleEvents } from "../type";
 import { Events, Interaction} from 'discord.js';
 
-const event : EttyEvents = {
+const event : DalleEvents = {
     name: Events.InteractionCreate,
     once: false,
     async execute(interaction: Interaction) {

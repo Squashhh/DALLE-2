@@ -15,7 +15,7 @@ declare module "discord.js" {
     }
 }
 
-export interface EttyEvents {
+export interface DalleEvents {
     name: string,
     once?: boolean | false,
     execute:(...args) => void

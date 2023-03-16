@@ -1,7 +1,7 @@
 {
-  "name": "etty",
+  "name": "dalle",
   "version": "1.0.0",
-  "description": "",
+  "description": "A discord bot to generate images via Dall-E artificial intelligence /imagine !",
   "main": "index.ts",
   "scripts": {
     "start": "node dist/index.js",

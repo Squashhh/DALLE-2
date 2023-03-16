@@ -1,9 +1,9 @@
-import { EttyEvents } from "../type";
+import { DalleEvents } from "../type";
 import { Events, Guild, WebhookClient, EmbedBuilder, ActivityType } from 'discord.js';
 import { client } from '../index';
 import axios from 'axios';
 
-const event: EttyEvents = {
+const event: DalleEvents = {
   name: Events.GuildDelete,
   once: false,
   async execute(guild: Guild) {
