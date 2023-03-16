@@ -27,7 +27,6 @@ export const command: SlashCommands = {
                 n: 1,
                 size: "1024x1024",
             });
-            console.log(response.data.data[0].url);
             const embed3 = new EmbedBuilder()
             	    .setTitle('Dall·E - Image Generation Tool')
            	        .setDescription("🤖 You have requested ``" + input + "``.")
