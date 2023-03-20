@@ -19,8 +19,8 @@ export const command: SlashCommands = {
     execute : async(command: ChatInputCommandInteraction) => {     
 
         const input = command.options.getString('desc');
-            console.log('🟥 Request sent : ' + input);
-            await command.deferReply(); 
+            console.log('🟥 Request sent : ' + input + " !");
+        await command.deferReply(); 
 
         try {
             //In the process of connecting with the api
