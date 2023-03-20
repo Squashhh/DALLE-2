@@ -28,7 +28,6 @@ export const command: SlashCommands = {
             await command.deferReply(); 
 
         try {
-<<<<<<< HEAD
             //In the process of connecting with the api
             const membre = await prisma.membre.findUnique({ where: { id: command.user.id } });
             if (membre) {
@@ -59,7 +58,6 @@ export const command: SlashCommands = {
                 await prisma.membre.create({ data: { id: command.user.id, utilisations: 24 }});    
                 await command.editReply({ embeds: [embed], components: [row]}) 
             }
-=======
             const response = await openai.createImage({
                 prompt: input,
                 n: 1,
