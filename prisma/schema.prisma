@@ -8,6 +8,6 @@ datasource db {
 }
 
 model Membre {
-  id           String @id
-  utilisations Int    @default(25)
+  id   String @id
+  uses Int    @default(25)
 }
