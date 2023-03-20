@@ -10,14 +10,18 @@
   "author": "Squash",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.14.1",
+    "@types/node": "^18.15.3",
+    "prisma": "^4.11.0",
+    "ts-node": "^10.9.1",
     "typecript": "^0.0.1-security",
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@prisma/client": "^4.11.0",
     "axios": "^1.3.4",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
     "openai": "^3.2.1"
-  }
+  },
+  "keywords": []
 }
