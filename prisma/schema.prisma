@@ -3,11 +3,11 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
-model Membre {
-  id   String @id
+model User {
+  id   String @unique
   uses Int    @default(25)
 }

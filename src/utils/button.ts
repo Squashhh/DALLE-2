@@ -13,3 +13,17 @@ export function simpleButton (
         if(isdisable) button.setDisabled()
     return button;
 }
+
+export function lovedButton (
+    emoji: string,
+    id: string,
+    style: ButtonStyle,
+    isdisable: boolean,
+) : ButtonBuilder {
+    const Button = new ButtonBuilder()
+    Button.setEmoji(emoji)
+        Button.setCustomId(id)
+        Button.setStyle(style)
+        if(isdisable) Button.setDisabled()
+    return Button;
+}

@@ -1,10 +1,15 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "CommonJS",                               
-    "esModuleInterop": true,                             
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "outDir": "dist"
+    "module": "commonjs",
+    "outDir": "./build/",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "$core/*": ["./src/*"],
+      "$resources/*": ["./resources/*"]
+    }
   }
 }
