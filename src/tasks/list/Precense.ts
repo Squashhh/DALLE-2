@@ -3,7 +3,7 @@ import Client from "$core/Client";
 import { ActivityType } from "discord.js";
 import { formatNumbers } from "$core/utils/Numbers";
 
-export default class CheckTrials extends Task {
+export default class Prencense extends Task {
   private cycleCounter: number = 0;
 
   constructor() {
