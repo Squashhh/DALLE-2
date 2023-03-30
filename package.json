@@ -7,6 +7,7 @@
   "license": "ISC",
   "scripts": {
     "start": "node -r @swc-node/register -r tsconfig-paths/register ./src/Client.ts",
+    "build": "npm tsc --watch",
     "generate": "prisma generate"
   },
   "dependencies": {
