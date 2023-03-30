@@ -6,7 +6,7 @@
   "author": "Squash",
   "license": "ISC",
   "scripts": {
-    "start": "node -r @swc-node/register -r tsconfig-paths/register ./src/Client.ts",
+    "start": "npm run build && node -r @swc-node/register -r tsconfig-paths/register ./src/Client.ts",
     "build": "npm tsc --watch",
     "generate": "prisma generate"
   },
